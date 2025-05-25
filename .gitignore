@@ -34,5 +34,5 @@
 
 .vscode
 /build/
-dev.cpp
+dev.*
 TODO.md
