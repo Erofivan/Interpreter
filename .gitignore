@@ -34,5 +34,7 @@
 
 .vscode
 /build/
-dev.*
-TODO.md
+/dev/
+*dev*
+*TODO*.md
+/.VSCodeCounter/

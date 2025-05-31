@@ -1,4 +1,4 @@
-#include <lib/interpreter.h>
+#include <lib/interpreter/core/interpreter.hpp>
 #include <gtest/gtest.h>
 
 TEST(BranchTestSuite, SimpleIfTest) {
@@ -43,9 +43,9 @@ TEST(BranchTestSuite, ComplexIfTest) {
         v = 100 * 2 + 10 * 3 + 9
         if v == 30 then
             print(30)
-        else if v == 366 then
+        elif v == 366 then
             print(366)
-        else if v == 239 then
+        elif v == 239 then
             print(239)
         else
             print(0)
@@ -63,7 +63,7 @@ TEST(BranchTestSuite, ComplexIfTest) {
 
 
 TEST(BranchTestSuite, OneLineIfTest) {
-    std::string code = "if 2 * 2 == 4 then print(\"2 * 2 == 4\") else print(\"omg\") end if";
+    std::string code = R"(if 2 * 2 == 4 then print("\"2 * 2 == 4\"") else print("\"omg\"") end if)";
     std::string expected = "\"2 * 2 == 4\"";
 
     std::istringstream input(code);
