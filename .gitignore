@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+
+.vscode
+/build/
+/dev/
+*dev*
+*TODO*.md
+/.VSCodeCounter/

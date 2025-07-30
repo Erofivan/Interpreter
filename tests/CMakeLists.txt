@@ -12,21 +12,23 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_executable(
-  itmoscript_tests
-  function_test.cpp
-  types_test.cpp
-  loop_and_branch_test.cpp
-)
+add_executable(itmoscript_interpreter_tests)
+
+add_subdirectory(01_expressions_tests)
+add_subdirectory(02_statements_tests)
+add_subdirectory(03_operations_tests)
+add_subdirectory(05_ifs_and_loops_tests)
+add_subdirectory(06_custom_functions_tests)
+add_subdirectory(full_time_programs_tests)
 
 target_link_libraries(
-  itmoscript_tests
-  itmoscript
+  itmoscript_interpreter_tests
+  itmoscript_interpreter
   GTest::gtest_main
 )
 
-target_include_directories(itmoscript_tests PUBLIC ${PROJECT_SOURCE_DIR})
+target_include_directories(itmoscript_interpreter_tests PUBLIC ${PROJECT_SOURCE_DIR})
 
 include(GoogleTest)
 
-gtest_discover_tests(itmoscript_tests)
+gtest_discover_tests(itmoscript_interpreter_tests)
